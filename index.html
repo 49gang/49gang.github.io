@@ -8,76 +8,100 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet"> 
 
 	<style>
 		body {
 			margin: 0;
 			padding: 0;
-			font-family: sans-serif;
-			background-color: #900;
+			font-family: "JetBrains Mono", monospace;
+			background-color: #000;
+			color: #fff;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			height: 100vh;
 		}
 
 		aside#bg-cover {
 			position: fixed;
 			top: 0;
 			left: 0;
-			width: 100%;
-			height: calc((100vh/3)*2);
+			width: 100vw;
+			height: 100vh;
 			background-image: url("img/wide.jpg");
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
 			z-index: -1;
+			opacity: 0.1;
 		}
 
-		main {
-			margin-top: calc((100vh/3)*2);
-			background-color: #900;
-			color: #fff;
-			/* border-top: 0.5rem solid #fff; */
+		header h1 {
+			font-size: 5rem;
+			font-weight: 700;
 			text-align: center;
+			margin: 0;
+			cursor: default;
+			opacity: 0.5;
+			transform: translateY(3rem);
+			transition: all 0.2s ease-out;
 		}
 
-		main h1 {
-			font-size: 3rem;
-			margin: 0;
+		main:hover header h1 {
+			transform: translateY(1.5rem);
+			opacity: 1;
 		}
 
 		main nav {
 			display: flex;
-			height: calc(100vh/3);
 		}
 
 		main nav a {
 			flex: 1;
-			padding: 3rem 0;
-			font-size: 2em;
-			background-color: #fff;
-			color: #900;
-			text-decoration: none;
-			font-weight: bold;
-			transition: all 0.2s ease-in-out;
-
 			display: flex;
-			align-items: center;
 			justify-content: center;
+			align-items: center;
+			z-index: 99;
+
+			text-align: center;
+			text-decoration: none;
+			padding: 1rem 0;
+			transition: flex 0.2s ease-in-out;
+		}
+
+		nav a:first-of-type {
+			border-top-left-radius: 1rem;
+			border-bottom-left-radius: 1rem;
+		}
+
+		nav a:last-of-type {
+			border-top-right-radius: 1rem;
+			border-bottom-right-radius: 1rem;
 		}
 
 		main nav a span {
-			transition: text-shadow 0.2s ease-in-out;
+			display: block;
+			transition: transform 0.2s ease-in-out;
 		}
-
 
 		main nav a:hover {
 			flex: 2;
-			font-size: 4em;
 		}
 
 		main nav a:hover span {
-			text-shadow: 0.5rem 0 1rem #000;
+			transform: scale(1.5);
 		}
 
+		/* footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100vw;
+			text-align: center;
+		} */
 
 		.george {
 			background-color: #821a1b;
@@ -97,27 +121,38 @@
 			font-family: 'Libre Baskerville', 'Merriweather', 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
 		}
 
-		@media screen and (max-aspect-ratio: 3/4) {
-			aside#bg-cover {
-				background-image: url("img/tall.jpg");
-			}
-
-			nav {
-				flex-direction: column;
-			}
-		}
 	</style>
 </head>
 <body>
+<div>
 	<aside id="bg-cover"></aside>
-
+	
 	<main>
+		<header>
+			<h1>49 Gang</h1>
+		</header>
+
 		<nav>
 			<a href="https://ghott.me" class="george"><span>George</span></a>
 			<a href="https://lewisakura.moe/" class="lewis"><span>Lewis</span></a>
 			<a href="https://tomr.me" class="tom"><span>Tom</span></a>
 		</nav>
 	</main>
-	
+
+	<!-- <footer>
+		<p id="js-quote"></p>
+	</footer> -->
+
+	<!-- <script>
+		window.onload = function() {
+			const quotes = [
+				"praise be to our lord and saviour, tony hunter of wmbusphotos"
+			];
+
+			const quote = document.getElementById("js-quote");
+			quote.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
+		}
+	</script> -->
+</div>
 </body>
 </html>
