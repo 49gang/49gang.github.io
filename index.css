@@ -103,14 +103,20 @@ main nav a:hover span.name {
 }
 
 .tom {
-  background-color: #271339;
-  color: #f2eef7;
+  background-color: #993379;
+  color: #f7edf4;
   font-family: "Libre Baskerville", "Merriweather", "Cambria", "Cochin",
     "Georgia", "Times", "Times New Roman", serif;
   font-style: italic;
+  /* italic text is kidna hard to read so give it a boost */
+  font-size: 110%;
   text-transform: lowercase;
 }
 
+/* make emoji normal size */
+.tom span.emoji-icon {
+  font-size: 90%;
+}
 
 span.emoji-icon {
   display: inline-block;
